@@ -18,7 +18,7 @@ type Clients struct {
 	Car    string `db:"auto" json:"Auto"`
 }
 
-	v, err := list.StructTagList(StuRapporte{}, "db", true)
+	v, err := list.StructTagList(Clients{}, "db", true)
   fmt.Print(v)
   fmt.Print(err)
   
