@@ -1,5 +1,10 @@
 # go-struct-tag-list
-Return comma separated list from Go struct tags
+
+This go library returns a comma separated list of tags from pure structs.
+
+## Idea
+
+todo
 
 
 ## Usage ##
