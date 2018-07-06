@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/pitw/go-struct-tag-list.svg?branch=master)](https://travis-ci.org/pitw/go-struct-tag-list)
 [![codecov](https://codecov.io/gh/pitw/go-struct-tag-list/branch/master/graph/badge.svg)](https://codecov.io/gh/pitw/go-struct-tag-list)
+[![GoDoc](https://godoc.org/github.com/pitw/go-struct-tag-list/list?status.svg)](https://godoc.org/github.com/pitw/go-struct-tag-list/list)
 
 # go-struct-tag-list
 
