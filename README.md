@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/pitw/go-struct-tag-list.svg?branch=master)](https://travis-ci.org/pitw/go-struct-tag-list)
+[![codecov](https://codecov.io/gh/pitw/go-struct-tag-list/branch/master/graph/badge.svg)](https://codecov.io/gh/pitw/go-struct-tag-list)
+
 # go-struct-tag-list
 
 This go library returns a comma separated list of tags from pure structs.
