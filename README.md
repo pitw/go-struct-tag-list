@@ -2,14 +2,30 @@
 [![codecov](https://codecov.io/gh/pitw/go-struct-tag-list/branch/master/graph/badge.svg)](https://codecov.io/gh/pitw/go-struct-tag-list)
 [![GoDoc](https://godoc.org/github.com/pitw/go-struct-tag-list/list?status.svg)](https://godoc.org/github.com/pitw/go-struct-tag-list/list)
 
-# go-struct-tag-list
+# Go Struct Tags to Comma Separated List
 
 This go library returns a comma separated list of tags from pure structs.
 
 ## Idea
 
-todo
+The idea of this lib is to simplify SQL queries without using an ORM.
 
+*Example:*
+```go
+type Clients struct {
+	Name   string `db:"username" json:"Username"`
+	City   string `db:"location" json:"City"`
+	Age    int    `db:"age" json:"Age"`
+	Gender string `db:"mf" json:"Gender"`
+	Car    string `db:"auto" json:"Auto"`
+	}
+```
+Instead of manually creating an SQL Query like "SELECT Name, City, Age, Gender, Car FROM..." the query can be written this way:
+
+```go
+fmt.Sprintf("SELECT %v WHERE %v = @p1", list.StructTagList(Clients{},"db",true), field), param)
+```
+Whenever the struct changes automatically also the Query will change.
 
 ## Usage ##
 
