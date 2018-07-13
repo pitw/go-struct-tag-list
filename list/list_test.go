@@ -1,8 +1,8 @@
 package list
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 type TestStruct struct {
@@ -20,11 +20,11 @@ func TestStructTagList(t *testing.T) {
 
 	y, err := StructTagList(TestStruct{}, "test", false)
 
-	if (err != nil) {
+	if err != nil {
 		t.Fatal(err)
 	}
 
-	if (x != "username,location,age,mf,auto" || y != "Demo") {
+	if x != "username,location,age,mf,auto" || y != "Demo" {
 		t.Fatal("False Struct Tag Parsing")
 	}
 }
@@ -33,10 +33,10 @@ func TestLoopStructTags(t *testing.T) {
 
 	q, err := loopStructTags(d, "test", true)
 
-	if (q[0] != "Demo") {
+	if q[0] != "Demo" {
 		t.Fatalf("False Query on %v", q[0])
 
-	} else if (err == nil) {
+	} else if err == nil {
 		t.Fatalf("Check doesn't work")
 	}
 
@@ -56,7 +56,7 @@ func TestStringsList(t *testing.T) {
 
 	s := stringsList([]string{"username", "location"})
 
-	if (s != "username,location") {
+	if s != "username,location" {
 		t.Fatal("Parse Error")
 
 	}

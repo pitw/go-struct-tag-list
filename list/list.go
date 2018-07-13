@@ -1,9 +1,9 @@
 package list
 
 import (
+	"fmt"
 	"reflect"
 	"strings"
-	"fmt"
 )
 
 func StructTagList(st interface{}, t string, ch bool) (string, error) {
@@ -24,7 +24,7 @@ func loopStructTags(st interface{}, t string, ch bool) ([]string, error) {
 		field := reflect.TypeOf(st).FieldByIndex([]int{i})
 
 		k := getStructTag(field, t)
-		if (k != "") {
+		if k != "" {
 			query = append(query, k)
 		}
 	}
@@ -35,9 +35,9 @@ func loopStructTags(st interface{}, t string, ch bool) ([]string, error) {
 }
 
 // Check if struct contains same amount of tags like resulting list
-func checkStructComplete(s int, q int, ch bool) (error) {
+func checkStructComplete(s int, q int, ch bool) error {
 	// Just check if param set to True
-	if (s != q && ch == true) {
+	if s != q && ch == true {
 		return fmt.Errorf("tags: Check Struct. QueryList() expects %v Tags. Got just %v", s, q)
 	} else {
 		return nil
