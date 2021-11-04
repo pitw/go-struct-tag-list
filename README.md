@@ -58,5 +58,8 @@ type Clients struct {
 v, err := list.StructTagList(Clients{}, "db", true)
 fmt.Print(v)   // returns username,location,age,mf,auto
 fmt.Print(err)  // returns nil
+
+
+v, err := list.StructTagTypeList(Clients{}, "db", true)
   
 ```

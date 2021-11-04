@@ -29,6 +29,28 @@ func TestStructTagList(t *testing.T) {
 	}
 }
 
+func TestStructTagTypeList(t *testing.T) {
+	x, err := StructTagTypeList(TestStruct{}, "db", true)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	for k, v := range x {
+		if k == "location" {
+			if v != "string" {
+				t.Fatal("False Struct Tag Parsing")
+			}
+		}
+		if k == "age" {
+			if v != "int" {
+				t.Fatal("False Struct Tag Parsing")
+			}
+		}
+	}
+
+}
+
 func TestLoopStructTags(t *testing.T) {
 
 	q, err := loopStructTags(d, "test", true)
